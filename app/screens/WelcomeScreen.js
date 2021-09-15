@@ -5,12 +5,13 @@ import AppButton from "../components/AppButton";
 function WelcomeScreen(props) {
   return (
     <ImageBackground
+      blurRadius={10}
       style={styles.background}
       source={require("../assets/background.svg")}
     >
       <View style={styles.logoContainer}>
         <Image style={styles.logo} source={require("../assets/logo.png")} />
-        <Text>بازار اجتماعی نخل</Text>
+        <Text style={styles.tagline}>بازار اجتماعی نخل</Text>
       </View>
       <View style={styles.buttonContainer}>
         <AppButton title="ورود" />
@@ -38,6 +39,11 @@ const styles = StyleSheet.create({
   logo: {
     width: 100,
     height: 100,
+  },
+  tagline: {
+    fontSize: 25,
+    fontWeight: "600",
+    paddingVertical: 20,
   },
 });
 
