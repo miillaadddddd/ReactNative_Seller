@@ -3,10 +3,11 @@ import ListingEditScreen from "./app/screens/ListingEditScreen";
 import * as ImagePicker from "expo-image-picker";
 import * as Permissions from "expo-permissions";
 import ListingsScreen from "./app/screens/ListingsScreen";
-import { Button } from "react-native";
+import { Button, Image } from "react-native";
+import Screen from "./app/components/Screen";
 
 export default function App() {
-  const [imageUri, setImageUri] = useState(initialState);
+  const [imageUri, setImageUri] = useState();
   const requestPermission = async () => {
     const { granted } = await ImagePicker.requestCameraRollPermissionsAsync();
     if (!granted) {
