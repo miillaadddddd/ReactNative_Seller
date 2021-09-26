@@ -1,7 +1,9 @@
 import React from "react";
 import { Image, StyleSheet, View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+
 import colors from "../config/colors";
+
 function ViewImageScreen(props) {
   return (
     <View style={styles.container}>
@@ -16,9 +18,9 @@ function ViewImageScreen(props) {
         />
       </View>
       <Image
-        resizeMode="cover"
+        resizeMode="contain"
         style={styles.image}
-        source={require("../assets/background.svg")}
+        source={require("../assets/chair.jpg")}
       />
     </View>
   );
@@ -29,20 +31,16 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 40,
     left: 30,
-    zIndex: "1",
   },
-
   container: {
+    backgroundColor: colors.black,
     flex: 1,
-    // backgroundColor: colors.black,
   },
   deleteIcon: {
     position: "absolute",
     top: 40,
     right: 30,
-    zIndex: "1",
   },
-
   image: {
     width: "100%",
     height: "100%",
